@@ -1,0 +1,27 @@
+
+<form novalidate #form="ngForm" (submit)="onSubmit(form)" >
+    <!-- <input type="hidden" name="Product_Id" [value]="service.formData.Product_Id" > -->
+    <div class="form-group">
+        <label>PRODUCT NAME</label>
+        <input class="form-control form-control-lg" placeholder="Product Name" name="Name"
+            #Name="ngModel" [(ngModel)]="service.formData.Name"/>
+            
+    </div>
+    <div class="form-group">
+        <label>PRICE</label>
+        <input class="form-control form-control-lg" placeholder="Product Price" name="Price"
+            #Price="ngModel" [(ngModel)]="service.formData.Price"/>
+            
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>ACTIVE</label>
+            <input type="number" class="form-control form-control-lg" placeholder="Active" name="Active"
+                #Active="ngModel" [(ngModel)]="service.formData.Active"/>
+                
+        </div>
+        </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>
